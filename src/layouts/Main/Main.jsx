@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import useUI from '../../data-context/useUI';
-import useUserStore from '../../storage/userStore';
+import Header from '@/components/Header/Header';
+import useUI from '@/data-context/useUI';
+import useUserStore from '@/storage/userStore';
 import * as S from './Main.style';
 
 const Main = () => {

@@ -3,7 +3,7 @@ import {
   createTheme,
   responsiveFontSizes,
 } from '@mui/material/styles';
-import useUserStore from '../storage/userStore';
+import useUserStore from '@/storage/userStore';
 import '@fontsource/roboto';
 
 function AppThemeProvider({ children }) {
