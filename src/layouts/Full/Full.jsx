@@ -1,10 +1,10 @@
+import { Container } from '@mui/material';
 import { Outlet } from 'react-router-dom';
-import * as S from './Full.style';
 
 const Full = () => (
-  <S.Container>
+  <Container>
     <Outlet />
-  </S.Container>
+  </Container>
 );
 
 export default Full;

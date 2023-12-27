@@ -1,18 +1,12 @@
-import { BrowserRouter } from 'react-router-dom';
-import { CssBaseline } from '@mui/material';
-import Routing from '@/routes/Routing';
 import Loader from '@/components/Loader';
-import useUI from '@/data-context/useUI';
+import Routing from '@/routes/Routing';
 
 const App = () => {
-  const { showLoader } = useUI();
-
   return (
-    <BrowserRouter>
-      <CssBaseline />
-      <Loader open={showLoader} />
+    <>
+      <Loader />
       <Routing />
-    </BrowserRouter>
+    </>
   );
 };
 

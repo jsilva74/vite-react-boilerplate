@@ -1,10 +1,14 @@
-import * as S from './Loader.style';
+import { Backdrop, CircularProgress } from '@mui/material';
 
-const Loader = ({ open }) => {
+import useUI from '@/data-context/useUI';
+
+const Loader = () => {
+  const { showLoader } = useUI();
+
   return (
-    <S.Overlay open={open}>
-      <S.CircularProgressIcon />
-    </S.Overlay>
+    <Backdrop open={showLoader} sx={{ zIndex: 1500 }}>
+      <CircularProgress color="primary" />
+    </Backdrop>
   );
 };
 

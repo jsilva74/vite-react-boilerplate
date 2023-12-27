@@ -1,10 +1,12 @@
+import '@fontsource/roboto';
+
 import {
-  ThemeProvider,
   createTheme,
   responsiveFontSizes,
+  ThemeProvider,
 } from '@mui/material/styles';
+
 import useUserStore from '@/storage/userStore';
-import '@fontsource/roboto';
 
 function AppThemeProvider({ children }) {
   const mode = useUserStore((state) => state.mode);

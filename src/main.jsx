@@ -1,10 +1,14 @@
+import './main.style.scss';
+
+import { CssBaseline } from '@mui/material';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+
+import App from '@/components/App';
 import { DataProvider } from '@/data-context/DataContextProvider';
 import AppThemeProvider from '@/theme/AppThemeProvider';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import App from '@/components/App';
-import './main.style.scss';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,7 +21,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <DataProvider>
       <AppThemeProvider>
         <QueryClientProvider client={queryClient}>
-          <App />
+          <BrowserRouter>
+            <CssBaseline />
+            <App />
+          </BrowserRouter>
         </QueryClientProvider>
       </AppThemeProvider>
     </DataProvider>

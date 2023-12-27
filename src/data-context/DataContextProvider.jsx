@@ -1,7 +1,8 @@
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 import { createContext, useContext, useMemo, useState } from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-import 'sweetalert2/dist/sweetalert2.min.css';
 
 const iSwal = withReactContent(Swal);
 const DataContext = createContext(undefined);

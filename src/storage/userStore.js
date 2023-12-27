@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
+import { createJSONStorage,persist } from 'zustand/middleware';
 
 const initialState = {
   token: null,
@@ -7,6 +7,8 @@ const initialState = {
     id: null,
     firstName: '',
     lastName: '',
+    fullName: '',
+    username: '',
     email: '',
     isAdmin: false,
   },

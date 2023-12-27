@@ -1,20 +1,16 @@
+import { Box, Container } from '@mui/material';
 import { Outlet } from 'react-router-dom';
+
 import Header from '@/components/Header/Header';
-import useUI from '@/data-context/useUI';
-import useUserStore from '@/storage/userStore';
-import * as S from './Main.style';
 
 const Main = () => {
-  const { sideMenuOpen } = useUI();
-  const token = useUserStore((state) => state.token);
-
   return (
-    <S.Container>
+    <Container maxWidth="" style={{ padding: 0 }}>
       <Header />
-      <S.Content collapse={token && sideMenuOpen ? 1 : token ? 0 : -1}>
+      <Box>
         <Outlet />
-      </S.Content>
-    </S.Container>
+      </Box>
+    </Container>
   );
 };
 export default Main;

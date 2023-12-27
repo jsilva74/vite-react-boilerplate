@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation,useNavigate } from 'react-router-dom';
+
 import useUI from '@/data-context/useUI';
 import useUserStore from '@/storage/userStore';
 
@@ -22,10 +23,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     if (!persistToast) closeSwal();
     setPersistToast(false);
-    if (
-      (!token && location.pathname !== '/') ||
-      (children.props.restricted && !isAdmin)
-    ) {
+    if (children.props.restricted && !isAdmin) {
       return navigate('/', { replace: true });
     }
     setActiveRoute(pathname);

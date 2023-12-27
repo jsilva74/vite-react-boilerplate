@@ -1,11 +1,10 @@
-import * as S from './Header.style';
+import { AppBar,Box } from '@mui/material';
 
 const Header = () => {
   return (
-    <S.Container>
-      HEADER
-      <div>---</div>
-    </S.Container>
+    <Box>
+      <AppBar position="static">HEADER</AppBar>
+    </Box>
   );
 };
 

@@ -1,10 +1,10 @@
-import * as S from './Home.style';
+import { Box } from '@mui/material';
 
 const Home = () => {
   return (
-    <S.Container>
+    <Box>
       <h1>Home</h1>
-    </S.Container>
+    </Box>
   );
 };
 
