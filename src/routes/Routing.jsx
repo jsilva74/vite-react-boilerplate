@@ -10,7 +10,7 @@ import useUserStore from '@/storage/userStore';
 const PageHome = lazy(() => import('@/pages/Home'));
 const NotFound = () => {
   const location = useLocation();
-  if (location.pathname === '/') return;
+  if (location.pathname === '/') return <></>;
   return <Navigate to="/" state={{ from: location }} replace />;
 };
 const routes = [

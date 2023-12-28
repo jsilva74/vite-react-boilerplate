@@ -5,7 +5,7 @@ import Header from '@/components/Header/Header';
 
 const Main = () => {
   return (
-    <Container maxWidth="" style={{ padding: 0 }}>
+    <Container maxWidth="" sx={{ padding: '0 !important' }}>
       <Header />
       <Box>
         <Outlet />

@@ -1,29 +1,27 @@
 import { create } from 'zustand';
-import { createJSONStorage,persist } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 const initialState = {
   token: null,
-  user: {
-    id: null,
-    firstName: '',
-    lastName: '',
-    fullName: '',
-    username: '',
-    email: '',
-    isAdmin: false,
+  id: null,
+  firstName: '',
+  lastName: '',
+  fullName: '',
+  username: '',
+  email: '',
+  isAdmin: false,
+  preferences: {
+    mode: window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light',
   },
-  mode: window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light',
 };
 
 const useUserStore = create(
   persist(
     (set, get) => ({
       ...initialState,
-      setToken: (data) => set({ token: data }),
-      setUser: (data) => set({ user: { ...get().user, ...data } }),
-      setMode: (data) => set({ mode: data }),
+      setUser: (data) => set({ ...get(), ...data }),
       reset: () => {
         set(initialState);
       },

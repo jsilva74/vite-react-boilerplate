@@ -5,7 +5,7 @@ const instance = axios.create({
   baseURL: import.meta.env.VITE_API,
 });
 instance.interceptors.request.use(
-  function (config) {
+  async function (config) {
     const token = useUserStore.getState().token;
     if (token)
       Object.assign(config.headers, { Authorization: `Bearer ${token}` });
