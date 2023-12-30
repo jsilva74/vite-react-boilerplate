@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation,useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import useUI from '@/data-context/useUI';
 import useUserStore from '@/storage/userStore';
@@ -14,9 +14,7 @@ const ProtectedRoute = ({ children }) => {
     persistToast,
     setPersistToast,
   } = useUI();
-  const user = useUserStore((state) => state.user);
-  const token = useUserStore((state) => state.token);
-  const { isAdmin } = user;
+  const { isAdmin, token } = useUserStore((state) => state);
   const { paths, labels } = children.props;
   const [, pathname] = location.pathname.split('/');
 

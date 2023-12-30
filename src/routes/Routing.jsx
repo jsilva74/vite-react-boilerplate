@@ -27,8 +27,7 @@ const routes = [
   },
 ];
 const Routing = () => {
-  const isAdmin = useUserStore((state) => state.user.isAdmin);
-  const token = useUserStore((state) => state.token);
+  const { isAdmin, token } = useUserStore((state) => state);
 
   return (
     <Routes>

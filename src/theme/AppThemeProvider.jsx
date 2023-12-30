@@ -9,7 +9,7 @@ import {
 import useUserStore from '@/storage/userStore';
 
 function AppThemeProvider({ children }) {
-  const mode = useUserStore((state) => state.mode);
+  const { mode } = useUserStore((state) => state.preferences);
   const theme = responsiveFontSizes(
     createTheme({
       palette: {
