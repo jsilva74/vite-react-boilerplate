@@ -36,7 +36,6 @@ function AppThemeProvider({ children }) {
           Lightest: '#F7F9FA',
           White: '#FFFFFF',
         },
-
         Red: {
           Darkest: '#6B0206',
           Base: '#E8282B',
@@ -44,7 +43,6 @@ function AppThemeProvider({ children }) {
           Lighter: '#FF9898',
           Lightest: '#FFE5E5',
         },
-
         Green: {
           Darkest: '#0A4C0A',
           Base: '#0F8B0F',
@@ -62,7 +60,6 @@ function AppThemeProvider({ children }) {
           secondary: '#999999',
           disabled: '#C3C1BD',
         },
-
         grey: {
           50: mode === 'dark' ? 'hsl(0, 0%, 10%)' : 'hsl(0, 5%, 95%)',
           100: mode === 'dark' ? 'hsl(0, 0%, 20%)' : 'hsl(0, 0%, 90%)',
@@ -81,10 +78,8 @@ function AppThemeProvider({ children }) {
           gold: 'linear-gradient(180deg, #A3873C 0%, #E3D294 100%)',
         },
       },
-
       typography: {
         fontFamily: 'Roboto, sans-serif',
-
         h1: {
           fontSize: '26px',
           fontWeight: '600',
