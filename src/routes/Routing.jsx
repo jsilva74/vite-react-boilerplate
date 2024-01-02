@@ -26,21 +26,21 @@ const routes = [
     routes: [],
   },
 ];
-const Routing = () => {
+const Routing = ({ show }) => {
   const { isAdmin } = useAppStore((state) => state.user);
   const { token } = useAppStore((state) => state.auth);
 
   return (
     <Routes>
       {routes.map(({ Component: Layout, routes: layoutRoutes }, lIdx) => (
-        <Route element={<Layout />} key={lIdx} replace>
+        <Route element={<Layout show={show} />} key={lIdx} replace>
           {layoutRoutes
             .filter(({ restricted }) => !restricted || isAdmin)
             .map(({ path, Component, Fallback, restricted, label }, rIdx) => (
               <Route
                 path={path?.join('/')}
                 element={
-                  <Suspense fallback="Aguarde...">
+                  <Suspense fallback="Wait...">
                     <ProtectedRoute>
                       {Fallback === undefined ? (
                         <Component

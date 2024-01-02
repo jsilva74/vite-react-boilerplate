@@ -25,6 +25,8 @@
     "@tanstack/react-query-devtools": "^5.15.5",
     "@tanstack/react-query-persist-client": "^5.15.5",
     "axios": "^1.6.3",
+    "framer-motion": "^10.16.16",
+    "ldrs": "^1.0.1",
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
     "pluralize-ptbr": "^1.0.4",
