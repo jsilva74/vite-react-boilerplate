@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import FullLayout from '@/layouts/Full';
 import MainLayout from '@/layouts/Main';
-import useUserStore from '@/storage/userStore';
+import useAppStore from '@/storage/appStore';
 
 const PageHome = lazy(() => import('@/pages/Home'));
 const NotFound = () => {
@@ -27,7 +27,8 @@ const routes = [
   },
 ];
 const Routing = () => {
-  const { isAdmin, token } = useUserStore((state) => state);
+  const { isAdmin } = useAppStore((state) => state.user);
+  const { token } = useAppStore((state) => state.auth);
 
   return (
     <Routes>

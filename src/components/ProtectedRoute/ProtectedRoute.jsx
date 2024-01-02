@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import useUI from '@/data-context/useUI';
-import useUserStore from '@/storage/userStore';
+import useAppStore from '@/storage/appStore';
 
 const ProtectedRoute = ({ children }) => {
   const location = useLocation();
@@ -14,13 +14,15 @@ const ProtectedRoute = ({ children }) => {
     persistToast,
     setPersistToast,
   } = useUI();
-  const { isAdmin, token } = useUserStore((state) => state);
+  const { isAdmin } = useAppStore((state) => state.user);
+  const { token } = useAppStore((state) => state.auth);
   const { paths, labels } = children.props;
   const [, pathname] = location.pathname.split('/');
 
   useEffect(() => {
     if (!persistToast) closeSwal();
     setPersistToast(false);
+    // TODO: add token check
     if (children.props.restricted && !isAdmin) {
       return navigate('/', { replace: true });
     }

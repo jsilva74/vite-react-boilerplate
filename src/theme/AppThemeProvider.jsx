@@ -6,10 +6,10 @@ import {
   ThemeProvider,
 } from '@mui/material/styles';
 
-import useUserStore from '@/storage/userStore';
+import useAppStore from '@/storage/appStore';
 
 function AppThemeProvider({ children }) {
-  const { mode } = useUserStore((state) => state.preferences);
+  const { mode } = useAppStore((state) => state.user.preferences);
   const theme = responsiveFontSizes(
     createTheme({
       palette: {
@@ -51,8 +51,8 @@ function AppThemeProvider({ children }) {
           Lightest: '#E5FFE5',
         },
         background: {
-          default: mode === 'dark' ? '#000000' : '#FCFBFA',
-          opposite: mode === 'dark' ? '#FCFBFA' : '#000000',
+          default: mode === 'dark' ? '#333' : '#E9E9E9',
+          opposite: mode === 'dark' ? '#E9E9E9' : '#333',
           paper: mode === 'dark' ? '#131313' : '#FCFCFC',
         },
         text: {
@@ -150,7 +150,7 @@ function AppThemeProvider({ children }) {
         MuiCssBaseline: {
           styleOverrides: {
             body: {
-              // ---CSS BODY--- \\
+              padding: '8px',
             },
           },
         },

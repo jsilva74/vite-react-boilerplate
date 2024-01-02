@@ -1,12 +1,13 @@
 import axios from 'axios';
-import useUserStore from 'storage/userStore';
+
+import useAppStore from '@/storage/appStore';
 
 const instance = axios.create({
   baseURL: import.meta.env.VITE_API,
 });
 instance.interceptors.request.use(
   async function (config) {
-    const token = useUserStore.getState().token;
+    const token = useAppStore.getState().auth.token;
     if (token)
       Object.assign(config.headers, { Authorization: `Bearer ${token}` });
     return config;

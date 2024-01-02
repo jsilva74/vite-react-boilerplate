@@ -13,6 +13,8 @@ import App from '@/components/App';
 import { DataProvider } from '@/data-context/DataContextProvider';
 import AppThemeProvider from '@/theme/AppThemeProvider';
 
+import { STORE_KEY } from './utils/constants';
+
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -24,17 +26,13 @@ export const queryClient = new QueryClient({
   },
 });
 const localStoragePersister = createSyncStoragePersister({
-  storage: window.localStorage,
-  key: `${import.meta.env.VITE_STORE}-cache`,
+  storage: window.sessionStorage,
+  key: `${STORE_KEY}-cache`,
 });
 persistQueryClient({
   queryClient,
   persister: localStoragePersister,
 });
-if (!import.meta.env.DEV) {
-  localStoragePersister.removeClient();
-  queryClient.invalidateQueries();
-}
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
