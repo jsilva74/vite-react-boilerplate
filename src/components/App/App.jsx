@@ -10,7 +10,7 @@ const App = () => {
     <>
       <Splash open={showSplash} />
       <Loader />
-      <Routing show={!showSplash} />
+      <Routing />
     </>
   );
 };

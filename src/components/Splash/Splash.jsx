@@ -20,6 +20,7 @@ const Splash = ({ open }) => {
             display: 'flex',
             flexDirection: 'column',
             rowGap: '40px',
+            zIndex: (theme) => theme.zIndex.drawer + 1,
           }}
         >
           <Box>
