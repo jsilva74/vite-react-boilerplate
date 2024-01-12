@@ -1,4 +1,3 @@
-import { AnimatePresence } from 'framer-motion';
 import { lazy, Suspense } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
@@ -32,43 +31,41 @@ const Routing = ({ show }) => {
   const { token } = useAppStore((state) => state.auth);
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        {routes.map(({ Component: Layout, routes: layoutRoutes }, lIdx) => (
-          <Route element={<Layout show={show} />} key={lIdx} replace>
-            {layoutRoutes
-              .filter(({ restricted }) => !restricted || isAdmin)
-              .map(({ path, Component, Fallback, restricted, label }, rIdx) => (
-                <Route
-                  path={path?.join('/')}
-                  element={
-                    <Suspense fallback="Wait...">
-                      <ProtectedRoute>
-                        {Fallback === undefined ? (
-                          <Component
-                            restricted={restricted}
-                            labels={label}
-                            paths={path}
-                          />
-                        ) : token ? (
-                          <Component
-                            restricted={restricted}
-                            labels={label}
-                            paths={path}
-                          />
-                        ) : (
-                          <Fallback />
-                        )}
-                      </ProtectedRoute>
-                    </Suspense>
-                  }
-                  key={rIdx}
-                />
-              ))}
-          </Route>
-        ))}
-      </Routes>
-    </AnimatePresence>
+    <Routes location={location} key={location.pathname}>
+      {routes.map(({ Component: Layout, routes: layoutRoutes }, lIdx) => (
+        <Route element={<Layout show={show} />} key={lIdx} replace>
+          {layoutRoutes
+            .filter(({ restricted }) => !restricted || isAdmin)
+            .map(({ path, Component, Fallback, restricted, label }, rIdx) => (
+              <Route
+                path={path?.join('/')}
+                element={
+                  <Suspense fallback="Wait...">
+                    <ProtectedRoute>
+                      {Fallback === undefined ? (
+                        <Component
+                          restricted={restricted}
+                          labels={label}
+                          paths={path}
+                        />
+                      ) : token ? (
+                        <Component
+                          restricted={restricted}
+                          labels={label}
+                          paths={path}
+                        />
+                      ) : (
+                        <Fallback />
+                      )}
+                    </ProtectedRoute>
+                  </Suspense>
+                }
+                key={rIdx}
+              />
+            ))}
+        </Route>
+      ))}
+    </Routes>
   );
 };
 
