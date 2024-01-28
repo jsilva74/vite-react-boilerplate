@@ -1,4 +1,4 @@
-import { useDataContext } from './DataContextProvider';
+import { useDataContext } from '@/data-context/DataContextProvider';
 
 const useUI = () => {
   const {

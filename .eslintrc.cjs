@@ -9,7 +9,7 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  plugins: ['react-refresh', 'simple-import-sort'],
+  plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
@@ -17,7 +17,5 @@ module.exports = {
     ],
     'react/prop-types': 'off',
     'react-hooks/exhaustive-deps': 'off',
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
   },
 };

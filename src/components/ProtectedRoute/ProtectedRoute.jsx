@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import useUI from '@/data-context/useUI';
+import useUI from '@/hooks/useUI';
 import useAppStore from '@/storage/appStore';
 
 const ProtectedRoute = ({ children }) => {

@@ -2,7 +2,7 @@ import 'ldrs/waveform';
 
 import { Backdrop, Box } from '@mui/material';
 
-import useUI from '@/data-context/useUI';
+import useUI from '@/hooks/useUI';
 
 const Loader = () => {
   const { showLoader } = useUI();
