@@ -79,22 +79,22 @@ function AppThemeProvider({ children }) {
         },
       },
       typography: {
-        fontFamily: 'Roboto, sans-serif',
+        fontFamily: `'Roboto', sans-serif`,
         h1: {
           fontSize: '26px',
-          fontWeight: '600',
+          fontWeight: '700',
         },
         h2: {
           fontSize: '22px',
-          fontWeight: '600',
+          fontWeight: '700',
         },
         h3: {
           fontSize: '20px',
-          fontWeight: '600',
+          fontWeight: '700',
         },
         h4: {
           fontSize: '18px',
-          fontWeight: '600',
+          fontWeight: '700',
         },
         h5: {
           fontSize: '16px',
@@ -113,29 +113,24 @@ function AppThemeProvider({ children }) {
           fontWeight: '400',
         },
         Body1: {
-          fontFamily: 'Roboto, sans-serif',
           fontSize: '14px',
           fontWeight: '400',
         },
         Body2: {
-          fontFamily: 'Roboto, sans-serif',
           fontSize: '13px',
           fontWeight: '400',
         },
         Body3: {
-          fontFamily: 'Roboto, sans-serif',
           fontSize: '12px',
           fontWeight: '400',
         },
         Body1Medium: {
-          fontFamily: 'Roboto, sans-serif',
           fontSize: '14px',
           fontWeight: '500',
         },
         Body1SemiBold: {
-          fontFamily: 'Roboto, sans-serif',
           fontSize: '14px',
-          fontWeight: '600',
+          fontWeight: '700',
         },
         body3: {
           fontSize: '12px',
