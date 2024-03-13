@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from '@/components/App';
-import { DataProvider } from '@/data-context/DataContextProvider';
+import DataProvider from '@/provider/DataProvider';
 import AppThemeProvider from '@/theme/AppThemeProvider';
 
 import { STORE_KEY } from './utils/constants';

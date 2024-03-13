@@ -1,17 +1,11 @@
 import 'sweetalert2/dist/sweetalert2.min.css';
 
-import { createContext, useContext, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import DataContext from './DataContext';
 
 const iSwal = withReactContent(Swal);
-const DataContext = createContext(undefined);
-const useDataContext = () => {
-  const context = useContext(DataContext);
-  if (!context)
-    throw new Error('useDataContext must be used within a DataProvider');
-  return context;
-};
 const DataProvider = (props) => {
   const [showLoader, setShowLoader] = useState(false);
   const [activeRoute, setActiveRoute] = useState('');
@@ -73,5 +67,4 @@ const DataProvider = (props) => {
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
-export { DataProvider, useDataContext };
+export default DataProvider;
