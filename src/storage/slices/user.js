@@ -7,6 +7,7 @@ const initialState = {
   email: '',
   avatar: '',
   isAdmin: false,
+  authenticated: false,
   preferences: {
     mode: window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark'
