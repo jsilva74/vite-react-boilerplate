@@ -15,7 +15,7 @@ import AppThemeProvider from '@/theme/AppThemeProvider';
 
 import { STORE_KEY } from './utils/constants';
 
-export const queryClient = new QueryClient({
+const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: false,
